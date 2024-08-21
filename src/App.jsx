@@ -5,7 +5,7 @@ import './App.css';
 import { FaSquarespace } from "react-icons/fa";
 
 const API_KEY = import.meta.env.VITE_NVIDIA_API_KEY;
-const BASE_URL = import.meta.env.VITE_BASE_URL;
+const BASE_URL = '/api/v1/chat/completions'; // Updated to use the proxy
 
 function App() {
   const [userInput, setUserInput] = useState('');

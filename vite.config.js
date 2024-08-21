@@ -6,7 +6,7 @@ export default defineConfig({
   server: {
     proxy: {
       '/api': {
-        target: 'https://integrate.api.nvidia.com',
+        target: 'https://integrate.api.nvidia.com', // This should match where your serverless function runs
         changeOrigin: true,
         rewrite: (path) => path.replace(/^\/api/, ''),
       },

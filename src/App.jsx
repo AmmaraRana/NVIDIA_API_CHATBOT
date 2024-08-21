@@ -5,7 +5,7 @@ import './App.css';
 import { FaSquarespace } from "react-icons/fa";
 
 const API_KEY = import.meta.env.VITE_NVIDIA_API_KEY;
-const BASE_URL = '/api/v1/chat/completions'; // Updated to use the proxy
+const BASE_URL = import.meta.env.VITE_BASE_URL;
 
 function App() {
   const [userInput, setUserInput] = useState('');
@@ -19,7 +19,7 @@ function App() {
     setLoading(true);
     try {
       const response = await axios.post(
-        BASE_URL,
+       `${BASE_URL}`,
         {
           model: "meta/llama-3.1-405b-instruct",
           messages: [{ role: "user", content: userInput }],
